@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-import { Autoplay, Thumbs } from "swiper";
+import {   Thumbs } from "swiper";
 import "swiper/css/bundle";
 import headphone from "../assets/images/hero/headphone.png";
 import btncar from "../assets/images/hero/btncar.svg";
@@ -60,7 +60,7 @@ const HeroSlider = () => {
               clickable: false,
             }}
             navigation={false}
-            modules={[Autoplay]}
+            modules={[Thumbs]}
             className="mySwiper"
           >
             <SwiperSlide>
