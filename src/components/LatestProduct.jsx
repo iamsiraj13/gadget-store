@@ -7,6 +7,8 @@ import smartwatch from "../assets/images/latestproduct/smartwatch.png";
 import thumb1 from "../assets/images/latestproduct/thumb1.png";
 import thumb2 from "../assets/images/latestproduct/thumb2.png";
 import thumb3 from "../assets/images/latestproduct/thumb3.png";
+import ppproduct from "../assets/images/popular-products/ppproduct1.png";
+import laptop from "../assets/images/popular-products/laptop.png";
 const LatestProduct = () => {
   return (
     <div className="latest-product-section">
@@ -38,7 +40,7 @@ const LatestProduct = () => {
                 </div>
 
                 {/* timer  */}
-                <div className="l-product-left-icons">
+                {/* <div className="l-product-left-icons">
                   <span>
                     <img src={compare} alt="" />
                   </span>
@@ -48,16 +50,28 @@ const LatestProduct = () => {
                   <span>
                     <img src={cart} alt="" />
                   </span>
-                </div>
+                </div> */}
+                {/* <div className="product-cart">
+                  <span className="bg-red">
+                    <img src={compare} alt="" />
+                  </span>
+                  <span className="bg-red">
+                    <img src={heart} alt="" />
+                  </span>
+                  <span className="bg-red">
+                    <img src={cart} alt="" />
+                  </span>
+                </div> */}
               </div>
             </div>
           </div>
           {/* latest product right column   */}
           <div className="product-right">
             <div className="r-product-top">
-              <div className="l-product-img">
+              {/* product image  */}
+              <div className="r-product-img">
                 <img src={smartwatch} alt="" />
-                <div className="l-product-img-thumb">
+                <div className="r-product-img-thumb">
                   <span>
                     <img src={thumb1} alt="" />
                   </span>
@@ -69,6 +83,7 @@ const LatestProduct = () => {
                   </span>
                 </div>
               </div>
+              {/*---------- product content ------ */}
               <div className="r-product-content">
                 <p>watch</p>
                 <h3 className="p-title">smart watch</h3>
@@ -90,6 +105,63 @@ const LatestProduct = () => {
                   <span className="bg-orange">
                     <img src={cart} alt="" />
                   </span>
+                </div>
+              </div>
+            </div>
+            {/* bottom product */}
+            <div className="bottom-product">
+              <div className="p-product-single l-card">
+                <h5>Watch</h5>
+                <h3 className="p-title">smart watch</h3>
+                <p className="p-price">
+                  price: <span>$200.00</span>
+                </p>
+                <div className="p-product-img">
+                  <img src={ppproduct} alt="" />
+                </div>
+                <div className="p-product-content">
+                  <p>
+                    Lorem Ipsum is simply dummy text of the printing and
+                    typesetting
+                  </p>
+                  <div className="product-cart">
+                    <span className="bg-red">
+                      <img src={compare} alt="" />
+                    </span>
+                    <span className="bg-red">
+                      <img src={heart} alt="" />
+                    </span>
+                    <span className="bg-red">
+                      <img src={cart} alt="" />
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div className="p-product-single l-card">
+                <h5>Laptop</h5>
+                <h3 className="p-title">hp pavilion</h3>
+                <p className="p-price">
+                  price: <span>$200.00</span>
+                </p>
+                <div className="p-product-img">
+                  <img src={laptop} alt="" />
+                </div>
+                <div className="p-product-content">
+                  <p>
+                    Lorem Ipsum is simply dummy text of the printing and
+                    typesetting
+                  </p>
+                  <div className="product-cart">
+                    <span className="bg-red">
+                      <img src={compare} alt="" />
+                    </span>
+                    <span className="bg-red">
+                      <img src={heart} alt="" />
+                    </span>
+                    <span className="bg-red">
+                      <img src={cart} alt="" />
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>

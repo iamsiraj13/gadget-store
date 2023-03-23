@@ -57,10 +57,10 @@ const HeroSlider = () => {
   };
 
   useEffect(() => {
-    console.log("Hello");
-    setTimeout(() => {
+    const timeslide = setInterval(() => {
       goToNext();
-    }, 3000);
+    }, 5000);
+    return () => clearInterval(timeslide);
   });
 
   return (
@@ -68,27 +68,46 @@ const HeroSlider = () => {
       <div className="container">
         <div className="slider-container">
           <div className="slider-thumb">
-            <div className="thumb" onClick={() => thumb(0)}>
+            <div
+              className={`${
+                currentIndex === 0 ? "thumb thumb-active" : "thumb"
+              }`}
+              onClick={() => thumb(0)}
+            >
               <img src={thumbheadphone} alt="" />
             </div>
-            <div className="thumb" onClick={() => thumb(1)}>
+            <div
+              className={`${
+                currentIndex === 1 ? "thumb thumb-active" : "thumb"
+              }`}
+              onClick={() => thumb(1)}
+            >
               <img src={thumbdesktop} alt="" />
             </div>
-            <div className="thumb" onClick={() => thumb(2)}>
+            <div
+              className={`${
+                currentIndex === 2 ? "thumb thumb-active" : "thumb"
+              }`}
+              onClick={() => thumb(2)}
+            >
               <img src={thumbwatch} alt="" />
             </div>
-            <div className="thumb">
+            <div
+              className={`${
+                currentIndex === 3 ? "thumb thumb-active" : "thumb"
+              }`}
+            >
               <img src={thumbmobile} alt="" onClick={() => thumb(3)} />
             </div>
           </div>
           {/*---------- slider content-------- */}
-          <div className="slider">
+          <div className="slider ">
             {slides.map((slide, index) => (
               <div
                 key={index}
                 className={`${
                   currentIndex === index
-                    ? "slider-inner"
+                    ? "slider-inner animate__animated animate__zoomIn animate-duration-5s animate__slower"
                     : "d-none slider-inner"
                 } `}
                 style={{
@@ -96,9 +115,31 @@ const HeroSlider = () => {
                 }}
               >
                 <div className="slider-content">
-                  <h2>{slide.title}</h2>
-                  <p>{slide.desc}</p>
-                  <button>
+                  <h2
+                    className={`${
+                      currentIndex === index
+                        ? "animate__animated animate__fadeInUp animation-duration-2s animate__delay-1s slider-content"
+                        : " "
+                    } `}
+                  >
+                    {slide.title}
+                  </h2>
+                  <p
+                    className={`${
+                      currentIndex === index
+                        ? "animate__animated animate__fadeInUp animation-duration-2s animate__delay-2s "
+                        : " "
+                    } `}
+                  >
+                    {slide.desc}
+                  </p>
+                  <button
+                    className={`${
+                      currentIndex === index
+                        ? "animate__animated animate__fadeInUp animation-duration-2s animate__delay-3s  "
+                        : " "
+                    } `}
+                  >
                     buy now{" "}
                     <span>
                       <img src={btncar} alt="" />
@@ -112,31 +153,30 @@ const HeroSlider = () => {
             {/*-------- slider number -------- */}
             <div className="slider-number">
               <h4>
-                <span>{currentIndex + 1}</span>/ <span>{slides.length}</span>
+                <span>0{currentIndex + 1}</span> <span>/0{slides.length}</span>
               </h4>
             </div>
-            <div className="dot">
-              <h4>
-                <span>{currentIndex + 1}</span>/ <span>{slides.length}</span>
-              </h4>
-            </div>
+
             {/* slider dot  */}
-            {/* <div className="dot">
+            {/* <ul className="dot">
               {slides.map((slide, index) => (
-                <div className="dot-box"></div>
+                <li className="dot-box"></li>
               ))}
-            
-            </div> */}
+            </ul> */}
             {/*------- slider arrow -------- */}
             <div className="slider-arrow">
-              <div className="left" onClick={goToPrev}>
-                <BsChevronLeft />
+              <div className="left">
+                <button onClick={goToPrev}>
+                  <BsChevronLeft />
+                </button>
               </div>
               <div className="slash">
                 <BsSlashLg />
               </div>
-              <div className="right" onClick={goToNext}>
-                <BsChevronRight />
+              <div className="right">
+                <button onClick={goToNext}>
+                  <BsChevronRight />
+                </button>
               </div>
             </div>
           </div>
